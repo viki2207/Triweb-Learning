@@ -1,0 +1,10 @@
+var x = 10;
+var y = 20;
+var sum = x + y;
+console.log(sum);
+var diff = x - y;
+console.log("Differance = " + diff);
+var multi = x * y;
+console.log("Multi = " + multi);
+var Quo = x / y;
+console.log("Quo = " + Quo);
