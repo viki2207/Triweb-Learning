@@ -1,0 +1,15 @@
+body {
+  background-color: aliceblue !important;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+  border: 5px solid;
+}
+
+h1 {
+  color: black;
+  text-align: center !important;
+}
+
+body {
+  text-align: center !important;
+}

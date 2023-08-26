@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <link rel="stylesheet" type="text/css" href="Form.css" />
+  </head>
+
+  <body>
+    <h1>Registration Form</h1>
+
+    <form
+      method=""
+      action=""
+      name="form_validate"
+      id="Form1"
+      onsubmit="return ValidateForm()"
+    >
+      <label for="Fname">First Name:</label>
+      <input type="text" name="fname" id="txtfname" placeholder="First Name" />
+
+      <br />
+      <label for="Lname">Last Name:</label>
+      <input type="text" name="lname" id="txtlname" placeholder="Last Name" />
+
+      <br />
+      <label for="Email">Email:</label
+      >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="email" name="Email" id="txtEmail" />
+
+      <br />
+      <label for="Contact">Contact No:</label>
+      <input type="number" name="Contact" id="txtContact" />
+
+      <br />
+      <label for="Dob"> DOB: </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="text" name="Dateofbirth" id="txtdob" />
+
+      <br />
+      <label for="Age">Age:</label
+      >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="number" name="Age" id="txtAge" />
+
+      <br />
+      <label for="Gender">Gender:</label>
+      <input type="radio" name="Gender" id="Rd1" value="Female" checked />
+      <label for="html">Female</label><br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="radio" name="Gender" id="Rd1" value="Male" />
+
+      <label for="html">Male</label><br />
+      <br />&nbsp;&nbsp;&nbsp;
+      <label for="Resume File:">Resume File:</label>
+      <input type="file" name="ResumeFile" id="ResumeFile" />
+
+      <br />
+      <br />
+      <button type="submit" id="btn_Submit" action="*">Submit</button>
+    </form>
+    <script src="Form.js"></script>
+  </body>
+</html>
