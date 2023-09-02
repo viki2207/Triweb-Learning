@@ -75,3 +75,53 @@ console.log(str.endsWith("place"));
 let str1 = "hiiMe";
 let arrk = Array.from(str1);
 console.log(arrk);
+//ARRAY.KEY
+let arr = ["a", "b", "c", "d", "e", "f"];
+let keys = arr.keys();
+console.log(keys);
+for (let e of keys) {
+  console.log(arr[e]);
+}
+//array.find(
+//array.findIndex()
+let arr2 = [12, 13, 14, 15];
+let firstoddNumber = arr2.find(getodd);
+function getodd(value, index, arr) {
+  return value % 2 != 0;
+}
+console.log(firstoddNumber);
+
+let arr3 = [12, 13, 14, 15];
+let indexoffirstOdd = arr3.findIndex((value, index, arr) => {
+  return value % 2 != 0;
+});
+console.log(indexoffirstOdd);
+
+//math methods
+//Math.trunc() =>always return int
+console.log(Math.trunc(3.4));
+console.log(Math.trunc(2));
+console.log(Math.sign(-19));
+console.log(Math.sign(20));
+console.log(Math.sign(0));
+console.log(Math.cbrt(20));
+console.log(Math.log2(2));
+console.log(Math.log10(10));
+//epsilon
+let x = Number.EPSILON;
+console.log(x);
+//min_safe_int
+let y = Number.MAX_SAFE_INTEGER;
+console.log(y);
+//max_safe_int
+
+let z = Number.MIN_SAFE_INTEGER;
+console.log(z);
+//number methods
+let a = 2;
+let b = 12234345454565656;
+console.log(Number.isInteger(a));
+console.log(Number.isSafeInteger(b));
+
+console.log(isFinite(20000 / 0));
+console.log("isNAN", isNAN(2 / "e"));
