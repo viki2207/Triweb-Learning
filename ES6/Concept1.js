@@ -20,14 +20,14 @@ arr1.forEach((element) => {
   console.log(element, " ");
 });
 //default parameter
-
+//default parameters is a good because if any parameter is undefined than directly use default values
 function addTwoNumber(Num1, Num2 = 0) {
   return Num1 + Num2;
 }
 let Sum2 = addTwoNumber(2, 3);
 console.log(Sum2);
 
-//rest parameter
+//rest parameter its good when we used for complex project with big values and parameters and arguments easy to access without complex
 function RestAddNumber(...Numbers) {
   let sum = 0;
   Numbers.forEach((e) => {
@@ -41,7 +41,7 @@ console.log(res);
 let res2 = RestAddNumber(2, 3);
 console.log(res2);
 
-//spread operator
+//spread operator , its used for seprate each and every value individually u can use anywhere invidiual
 let arr3 = [1, 2, 3, 4, 5, 6, 7];
 let arr4 = [11, 23];
 let combined_arr = [...arr3, ...arr4];
@@ -56,7 +56,7 @@ objStudent2.name = "Ajit";
 console.log("After Updating objStudent1:", objStudent);
 console.log("Before Updating objStudent:", objStudent2);
 
-//template literals
+//template literals, its used for behalf of double and single quotation  no need to complex about quotations
 function PrintData(Sname, Sage) {
   let toPrint = `Student name is ${Sname}  and age is ${Sage}`;
   console.log(toPrint);
@@ -64,7 +64,7 @@ function PrintData(Sname, Sage) {
 let Sname = "v";
 let Sage = 30;
 PrintData(Sname, Sage);
-//rawstring
+//rawstring easy for comparision small changes ignore when we do compare
 console.log(String.raw`age is \n ${40}` == "age is \\n 40");
 
 //extended literalsfor binary and octal
@@ -77,7 +77,7 @@ let age = 40;
 let Student = { name, age };
 console.log(Student);
 
-//Computed property
+//Computed propertyeasily use function name as a pramerter as well computed
 let key = "new_key";
 function ret() {
   return "Somewherevalues";
