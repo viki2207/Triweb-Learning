@@ -1,0 +1,128 @@
+db.MyfirstDatabase.find();
+db.createCollection("products", {
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      required: ["title", "pname", "Owner", "comments"],
+      properties: {
+        title: {
+          bsonType: "string",
+          description: "Title Must be a string",
+        },
+        pname: {
+          bsonType: "string",
+          description: "Pname Must be a string",
+        },
+        owner: {
+          bsonType: "objectId",
+          description: "Id of customer",
+        },
+        comments: {
+          bsonType: "string",
+          description: "Comments Must be a string",
+        },
+      },
+    },
+  },
+});
+db.products.insertOne({
+  title: "my product",
+  pname: "Product001",
+  owner: ObjectId("650269f657b41af431bbc709"),
+  comments: "hi there",
+});
+//insert function not return obj id so always use insert one and insert many
+db.products.insertMany([
+  {
+    title: "my product",
+    pname: "Product002",
+    Owner: ObjectId("650269f657b41af431bbc708"),
+    comments: "hi there",
+  },
+  {
+    title: "my product",
+    pname: "Product003",
+    Owner: ObjectId("650269f657b41af431bbc708"),
+    comments: "hi there",
+  },
+  {
+    title: "my product",
+    pname: "Product004",
+    Owner: ObjectId("650269f657b41af431bbc708"),
+    comments: "hi there",
+  },
+]);
+
+db.products.insertMany(
+  [
+    {
+      title: "my product5",
+      pname: "Product005",
+      Owner: ObjectId("650269f657b41af431bbc708"),
+      comments: "hi there",
+    },
+    {
+      title: "my product6",
+      pname: "Product006",
+      Owner: ObjectId("650269f657b41af431bbc708"),
+      comments: "hi there",
+    },
+    {
+      pname: "Product007",
+      Owner: ObjectId("650269f657b41af431bbc708"),
+      comments: "hi there",
+    },
+    {
+      title: "my product8",
+      pname: "Product008",
+      Owner: ObjectId("650269f657b41af431bbc708"),
+      comments: "hi there",
+    },
+    {
+      title: "my product9",
+      pname: "Product009",
+      Owner: ObjectId("650269f657b41af431bbc708"),
+      comments: "hi there",
+    },
+  ],
+  { ordered: false }
+);
+
+db.createCollection("books", {
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      required: ["title", "pname", "Owner", "comments"],
+      properties: {
+        title: {
+          bsonType: "string",
+          description: "Title Must be a string",
+        },
+        pname: {
+          bsonType: "string",
+          description: "Pname Must be a string",
+        },
+        owner: {
+          bsonType: "objectId",
+          description: "Id of customer",
+        },
+        comments: {
+          bsonType: "string",
+          description: "Comments Must be a string",
+        },
+      },
+    },
+  },
+});
+
+db.books.insertOne([
+  {
+    title: "my product5",
+    bname: "Book002",
+    price: 500,
+  },
+  { title: "my product6", bname: "Book003", price: 600 },
+  { title: "my product7", bname: "Book004", price: 700 },
+]);
+
+db.books.find({ price: { $nin: [400, 600] } });
