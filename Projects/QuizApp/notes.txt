@@ -1,0 +1,14 @@
+=>app connect to routes =>/ user send to user rout => user rout decide what request like put, get, when we send which post connect to controller 
+
+RestApi:
+//endpoint : all code in there
+send request to endpoint 
+--respose
+//get:give user details
+
+IP whitelist: only few ip get access to called whitelist 
+//Bson
+:binary format
+
+
+//projection: 
