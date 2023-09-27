@@ -11,5 +11,5 @@ const router = express.Router();
 router.get("/:userId", isAuthenticated, getUser);
 
 //put
-router.put("/", updateUser);
+router.put("/", isAuthenticated, updateUser);
 export default router;

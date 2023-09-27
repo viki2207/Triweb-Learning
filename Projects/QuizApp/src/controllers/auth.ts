@@ -2,10 +2,12 @@ import { Request, Response, NextFunction } from "express";
 import User from "../models/user";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
+import ProjectError from "../helper/error";
+import { validationResult } from "express-validator";
 interface ReturnResponse {
   status: "success" | "error";
   message: string;
-  data: {};
+  data: {} | [];
 }
 const registerUser = async (
   req: Request,
@@ -14,6 +16,13 @@ const registerUser = async (
 ) => {
   let resp: ReturnResponse;
   try {
+    const validationError = validationResult(req);
+    if (!validationError.isEmpty()) {
+      const err = new ProjectError("Validation failed");
+      err.statuscode = 422;
+      err.data = validationError.array();
+      throw err;
+    }
     const email = req.body.email;
     const name = req.body.name;
     let password = await bcrypt.hash(req.body.password, 12);
@@ -21,9 +30,9 @@ const registerUser = async (
     const user = new User({ email, name, password });
     const result = await user.save();
     if (!result) {
-      resp = { status: "error", message: "No Result found", data: {} };
-
-      res.send(resp);
+      const err = new ProjectError("No Result found");
+      err.statuscode = 401;
+      throw err;
     } else {
       resp = {
         status: "success",
@@ -34,9 +43,7 @@ const registerUser = async (
       res.send(resp);
     }
   } catch (error) {
-    console.log(error);
-    resp = { status: "error", message: "Something went wrong", data: {} };
-    res.status(500).send(resp);
+    next(error);
   }
 };
 
@@ -50,8 +57,9 @@ const loginUser = async (req: Request, res: Response, next: NextFunction) => {
     //find user with email
     const user = await User.findOne({ email });
     if (!user) {
-      resp = { status: "error", message: "No User exist", data: {} };
-      res.status(401).send(resp);
+      const err = new ProjectError("No User exist");
+      err.statuscode = 401;
+      throw err;
     } else {
       const status1 = await bcrypt.compare(password, user.password);
       if (status1) {
@@ -65,8 +73,9 @@ const loginUser = async (req: Request, res: Response, next: NextFunction) => {
         };
         res.send(resp);
       } else {
-        resp = { status: "error", message: "credentials mismatch", data: {} };
-        res.status(401).send(resp);
+        const err = new ProjectError("credentials mismatch");
+        err.statuscode = 401;
+        throw err;
       }
 
       console.log(user);
@@ -75,10 +84,15 @@ const loginUser = async (req: Request, res: Response, next: NextFunction) => {
     //verify password using bcrypt
     //user decide
   } catch (error) {
-    console.log(error);
-    resp = { status: "error", message: "Something went wrong", data: {} };
-    res.status(500).send(resp);
+    next(error);
   }
 };
+const isUserExist = async (email: String) => {
+  const user = await User.findOne({ email });
+  if (!user) {
+    return false;
+  }
+  return true;
+};
 
-export { registerUser, loginUser };
+export { registerUser, loginUser, isUserExist };
