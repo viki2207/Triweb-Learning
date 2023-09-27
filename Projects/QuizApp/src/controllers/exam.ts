@@ -2,11 +2,8 @@ import { Response, NextFunction, Request } from "express";
 import Quiz from "../models/quiz";
 import Report from "../models/report";
 import ProjectError from "../helper/error";
-interface ReturnResponse {
-  status: "success" | "error";
-  message: string;
-  data: {} | [];
-}
+import { ReturnResponse } from "../util/interface";
+
 const startExam = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const quiz = await Quiz.findById(req.params.quizId, {

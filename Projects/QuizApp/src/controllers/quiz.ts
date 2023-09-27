@@ -1,13 +1,10 @@
-import { NextFunction, Request, Response } from "express";
+import { RequestHandler } from "express";
 import { validationResult } from "express-validator";
 import Quiz from "../models/quiz";
 import ProjectError from "../helper/error";
-interface ReturnResponse {
-  status: "success" | "error";
-  message: string;
-  data: {} | [];
-}
-const createQuiz = async (req: Request, res: Response, next: NextFunction) => {
+import { ReturnResponse } from "../util/interface";
+
+const createQuiz: RequestHandler = async (req, res, next) => {
   try {
     const validationError = validationResult(req);
     console.log(Object.keys(req.body.answers).length);
@@ -35,7 +32,7 @@ const createQuiz = async (req: Request, res: Response, next: NextFunction) => {
     next(error);
   }
 };
-const getQuiz = async (req: Request, res: Response, next: NextFunction) => {
+const getQuiz: RequestHandler = async (req, res, next) => {
   try {
     const quiz_Id = req.params.quizId;
 
@@ -66,7 +63,7 @@ const getQuiz = async (req: Request, res: Response, next: NextFunction) => {
     next(error);
   }
 };
-const updateQuiz = async (req: Request, res: Response, next: NextFunction) => {
+const updateQuiz: RequestHandler = async (req, res, next) => {
   try {
     const quiz_Id = req.body._id;
     const quiz = await Quiz.findById(quiz_Id);
@@ -101,7 +98,7 @@ const updateQuiz = async (req: Request, res: Response, next: NextFunction) => {
     next(error);
   }
 };
-const deleteQuiz = async (req: Request, res: Response, next: NextFunction) => {
+const deleteQuiz: RequestHandler = async (req, res, next) => {
   try {
     const quiz_Id = req.params.quizId;
     const quiz = await Quiz.findById(quiz_Id);
@@ -132,7 +129,7 @@ const deleteQuiz = async (req: Request, res: Response, next: NextFunction) => {
     next(error);
   }
 };
-const publishQuiz = async (req: Request, res: Response, next: NextFunction) => {
+const publishQuiz: RequestHandler = async (req, res, next) => {
   try {
     const quizId = req.body.quizId;
     const quiz = await Quiz.findById(quizId);

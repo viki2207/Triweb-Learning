@@ -1,16 +1,12 @@
 import Report from "../models/report";
 import express from "express";
 import ProjectError from "../helper/error";
-import { Request, Response, NextFunction } from "express";
+import { ReturnResponse } from "../util/interface";
+import { Request, Response, NextFunction, RequestHandler } from "express";
 
-interface ReturnResponse {
-  status: "success" | "error";
-  message: string;
-  data: {} | [];
-}
 const router = express.Router();
 
-const getReport = async (req: Request, res: Response, next: NextFunction) => {
+const getReport: RequestHandler = async (req, res, next) => {
   try {
     let report;
     if (!!req.params.reportId) {

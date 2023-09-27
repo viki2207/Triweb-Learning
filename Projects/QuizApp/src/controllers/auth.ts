@@ -1,19 +1,12 @@
-import { Request, Response, NextFunction } from "express";
+import { RequestHandler } from "express";
+import { ReturnResponse } from "../util/interface";
 import User from "../models/user";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import ProjectError from "../helper/error";
 import { validationResult } from "express-validator";
-interface ReturnResponse {
-  status: "success" | "error";
-  message: string;
-  data: {} | [];
-}
-const registerUser = async (
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
+
+const registerUser: RequestHandler = async (req, res, next) => {
   let resp: ReturnResponse;
   try {
     const validationError = validationResult(req);
@@ -47,7 +40,7 @@ const registerUser = async (
   }
 };
 
-const loginUser = async (req: Request, res: Response, next: NextFunction) => {
+const loginUser: RequestHandler = async (req, res, next) => {
   let resp: ReturnResponse;
 
   try {
