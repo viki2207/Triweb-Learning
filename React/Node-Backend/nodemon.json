@@ -1,0 +1,5 @@
+{
+  "env": {
+    "connectionString": "mongodb+srv://myuser:12345@cluster0.zc2d5ak.mongodb.net/workshopdb?retryWrites=true&w=majority"
+  }
+}
