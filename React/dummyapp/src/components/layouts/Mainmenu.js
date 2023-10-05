@@ -9,16 +9,16 @@ function MainMenu() {
   return (
     <header className={MainMenuStyle.header}>
       <ul>
-        <li>
+        <li key="{Home}">
           <Link to="/">Home</Link>
         </li>
-        <li>
+        <li key="{About}">
           <Link to="/about">About</Link>
         </li>
-        <li>
+        <li key="{Contact}">
           <Link to="/contact">Contact</Link>
         </li>
-        <li>
+        <li key="{Product}">
           <Link to="/product">Product</Link>
         </li>
         <li>

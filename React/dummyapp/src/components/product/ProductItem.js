@@ -1,16 +1,13 @@
 import CustomWrapper from "../layouts/CustomWrapper";
 import style from "./ProductItem.module.css";
+import logo from "../product/img/img1.jpg";
 function ProductItem(props) {
   return (
-    <li key={props.item.id}>
+    <li key={props.item._id}>
       <CustomWrapper myname="Azhar">
         <div>
           <div>
-            <img
-              src={props.item.image}
-              alt="No Img"
-              className={style.img}
-            ></img>
+            <img src={logo} alt="No Img" className={style.image}></img>
           </div>
           {/* <div>
           <h2>some name</h2>
