@@ -50,7 +50,7 @@ import Product from "./components/Product";
 import Contact from "./components/Contact";
 import Layout from "./components/layouts/Layout";
 import AddProduct from "./components/product/AddProduct";
-//import FavouriteItems from "./pages/FavouriteItems";
+import FavouriteItems from "./components/layouts/FavouriteItems";
 function App() {
   return (
     <Layout>
@@ -60,7 +60,7 @@ function App() {
         <Route path="/contact" element={<Contact />}></Route>
         <Route path="/Product" element={<Product />}></Route>
         <Route path="/Product/add" element={<AddProduct />}></Route>
-        {/* <Route path="/product/favourite" element={<FavouriteItems />}></Route> */}
+        <Route path="/product/favourite" element={<FavouriteItems />}></Route>
       </Routes>
     </Layout>
   );

@@ -30,3 +30,15 @@ li a:hover:not(.active) {
 .active {
   background-color: #04aa6d;
 }
+
+.favouriteCount {
+  display: inline-block;
+  width: 40px;
+  height: 36px;
+  border: 1px solid rgb(8, 65, 156);
+  color: rgb(15, 26, 138);
+  text-align: center;
+  border-radius: 50%;
+  border-width: 4px;
+  padding-top: 12px;
+}

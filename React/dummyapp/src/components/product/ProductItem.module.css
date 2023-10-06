@@ -67,3 +67,6 @@
   margin-left: 96%;
   cursor: pointer;
 }
+.li {
+  list-style: none outside none;
+}

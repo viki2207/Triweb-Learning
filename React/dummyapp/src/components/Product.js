@@ -22,7 +22,6 @@ function Product() {
   }
   return (
     <div>
-      with data
       <ProductList products={products} />
     </div>
   );
