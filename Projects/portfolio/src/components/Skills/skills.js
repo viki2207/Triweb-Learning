@@ -7,7 +7,7 @@ import AppDesign from "../../assets/database.png";
 const skills = () => {
   return (
     <section id="skills">
-      <span className="skillTitle">What I do</span>
+      <span className="skillTitle">My Skills</span>
       <span className="skillDesc">
         Self motivated Full stack Developer familiar with 5+ years of experience
         as a developer. React, Express,node, Mongodb, MYSQL, SQL Server,js, c#,

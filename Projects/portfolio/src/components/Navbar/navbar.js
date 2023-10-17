@@ -30,7 +30,7 @@ const Navbar = () => {
           duration={500}
           className="desktopMenuListItem"
         >
-          About
+          Skills
         </Link>
         <Link
           activeClass="active"
@@ -41,7 +41,7 @@ const Navbar = () => {
           duration={500}
           className="desktopMenuListItem"
         >
-          Portfolio
+          Projects
         </Link>
         <Link
           activeClass="active"
@@ -52,7 +52,7 @@ const Navbar = () => {
           duration={500}
           className="desktopMenuListItem"
         >
-          Clients
+          Experience
         </Link>
       </div>
       <button
@@ -96,7 +96,7 @@ const Navbar = () => {
           className="ListItem"
           onClick={() => setShowMenu(false)}
         >
-          About
+          Skills
         </Link>
         <Link
           activeClass="active"
@@ -108,7 +108,7 @@ const Navbar = () => {
           className="ListItem"
           onClick={() => setShowMenu(false)}
         >
-          Portfolio
+          Projects
         </Link>
         <Link
           activeClass="active"
@@ -120,7 +120,7 @@ const Navbar = () => {
           className="ListItem"
           onClick={() => setShowMenu(false)}
         >
-          Clients
+          Experience
         </Link>
         <Link
           activeClass="active"

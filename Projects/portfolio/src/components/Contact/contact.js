@@ -41,11 +41,10 @@ const Contact = () => {
   return (
     <section id="contactPage">
       <div id="clients">
-        <h1 className="contactPageTitle">My clients</h1>
+        <h1 className="contactPageTitle">My Experience</h1>
         <p className="clientDesc">
           I have had the opportunity to work with a diverse group of companies.
-          Some of the notable companies. some of the notable companies i have
-          worked with includes
+          Some of the notable companies...
         </p>
         <div className="clientImgs">
           <img src={shahnet} alt="client" className="clientImg" />
@@ -59,7 +58,9 @@ const Contact = () => {
         <span className="contactDesc">
           Please fill out the form below to discuss any work opportunities
         </span>
+        {/* onSubmit={sendEmail} */}
         {/* ref for email */}
+        {/* contactForm */}
         <from action="contactForm" ref={form} onSubmit={sendEmail}>
           <div>
             <input
@@ -81,11 +82,12 @@ const Contact = () => {
             <textarea
               name="message"
               rows="5"
-              placeholder="Your message"
+              placeholder="Your Message"
               className="msg"
             ></textarea>
           </div>
           <div>
+            {/* <input type="submit" value="Send" className="submitBtn" /> */}
             <button type="Submit" value="Send" className="submitBtn">
               Submit
             </button>

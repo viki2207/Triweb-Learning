@@ -10,7 +10,7 @@ import Portfolio6 from "../../assets/portfolio-6.png";
 const Works = () => {
   return (
     <section id="works">
-      <h2 className="worksTitle">My Portfolio</h2>
+      <h2 className="worksTitle">My Projects</h2>
       <span className="worksDesc">
         I take pride in paying attention to the smallest details and making sure
         my work is without error. I am excited to bring my skills and experience
