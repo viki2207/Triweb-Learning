@@ -5,6 +5,7 @@ import { Link } from "react-scroll";
 import btnImg from "../../assets/GitHub.png";
 import btnImg1 from "../../assets/Resume.png";
 import resume from "../../assets/Resume.pdf";
+
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 const Intro = () => {
   const [text] = useTypewriter({
@@ -26,21 +27,28 @@ const Intro = () => {
           in creating{<br />} visually appealing and user - friendly
           applications
         </p>
-        <Link to="../../assets/Resume.pdf" download>
-          <img src={btnImg} alt="GitHub" className="link"></img>{" "}
-          {/* <button className="btn">
+        <span>
+          <a
+            href="https://github.com/viki2207"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src={btnImg} alt="GitHub" className="link"></img>
+          </a>
+          <a href={resume} target="_blank" rel="noreferrer" download>
+            <img src={btnImg1} alt="Resume" className="link"></img>
+          </a>
+        </span>
+      </div>
+      {/* <button className="btn">
             <img src={btnImg} alt="Git Hub" className="btnImg" />
             My Git Hub
-           </button> */}{" "}
-          {/* <button className="btn">
+           </button> */}
+      {/* <button className="btn">
             <img src={btnImg1} alt="Resume" className="btnImg" />
             My Resume
           </button> */}
-        </Link>
-        <a href={resume} target="_blank" download>
-          <img src={btnImg1} alt="Resume" className="link"></img>
-        </a>
-      </div>
+
       <img src={bg} alt="profile" className="bg" />
     </section>
   );
