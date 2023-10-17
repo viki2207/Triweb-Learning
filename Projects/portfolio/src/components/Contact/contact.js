@@ -7,7 +7,7 @@ import medtechit from "../../assets/medtechitlogo.png";
 import Facebook from "../../assets/facebook.png";
 import FacebookIcon from "../../assets/facebook-icon.png";
 import TwitterIcon from "../../assets/twitter.png";
-import youtubeIcon from "../../assets/youtube.png";
+import LinkedinIcon from "../../assets/Linkedin.png";
 
 import InstagramIcon from "../../assets/instagram.png";
 //send email lib before that install  npm install @emailjs/browser --save
@@ -93,10 +93,28 @@ const Contact = () => {
             </button>
           </div>
           <div className="links">
-            <img src={FacebookIcon} alt="Facebook" className="link"></img>
-            <img src={TwitterIcon} alt="Twitter" className="link"></img>
-            <img src={youtubeIcon} alt="Youtube" className="link"></img>
-            <img src={InstagramIcon} alt="Instagram" className="link"></img>
+            <a
+              href="https://www.facebook.com/shahvidhi.jayeshbhai"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={FacebookIcon} alt="Facebook" className="link"></img>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/vidhi-shah-855556119"
+              target="_blank"
+              rel="noreferrer"
+            >
+              {/* <img src={TwitterIcon} alt="Twitter" className="link"></img> */}
+              <img src={LinkedinIcon} alt="Linkedin" className="link"></img>
+            </a>
+            <a
+              href="https://www.instagram.com/vdsh2207/?hl=en"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={InstagramIcon} alt="Instagram" className="link"></img>
+            </a>
           </div>
         </from>
       </div>
