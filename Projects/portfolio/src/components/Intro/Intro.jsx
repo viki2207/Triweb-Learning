@@ -26,18 +26,20 @@ const Intro = () => {
           in creating{<br />} visually appealing and user - friendly
           applications
         </p>
-        <Link>
-          {/* <img src={btnImg} alt="GitHub" className="link"></img>{" "} */}
-          <button className="btn">
+        <Link to="../../assets/Resume.pdf" download>
+          <img src={btnImg} alt="GitHub" className="link"></img>{" "}
+          {/* <button className="btn">
             <img src={btnImg} alt="Git Hub" className="btnImg" />
             My Git Hub
-          </button>{" "}
+           </button> */}{" "}
           {/* <button className="btn">
             <img src={btnImg1} alt="Resume" className="btnImg" />
             My Resume
           </button> */}
-          {/* <img src={btnImg1} alt="Resume" className="link"></img> */}
         </Link>
+        <a href={resume} target="_blank" download>
+          <img src={btnImg1} alt="Resume" className="link"></img>
+        </a>
       </div>
       <img src={bg} alt="profile" className="bg" />
     </section>
