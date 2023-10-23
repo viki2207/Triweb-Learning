@@ -1,6 +1,6 @@
 import React from "react";
 import "./intro.css";
-import bg from "../../assets/Vidhi.png";
+import bg from "../../assets/Vidhi1.png";
 import { Link } from "react-scroll";
 import btnImg from "../../assets/GitHub.png";
 import btnImg1 from "../../assets/Resume.png";

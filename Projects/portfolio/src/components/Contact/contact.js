@@ -14,7 +14,11 @@ import InstagramIcon from "../../assets/instagram.png";
 import emailjs from "@emailjs/browser";
 
 const Contact = () => {
-  const [formState, setFromState] = useState({});
+  const [formState, setFromState] = useState({
+    your_name: "",
+    your_email: "",
+    Your_message: "",
+  });
 
   const form = useRef();
   //Send email function
@@ -23,7 +27,6 @@ const Contact = () => {
     setFromState({ ...formState, [event.target.name]: event.target.value });
   };
   const submitHandler = (event) => {
-    alert("I m in");
     //https://app.elasticemail.com/ and using https://smtpjs.com/
     event.preventDefault();
     const config = {
@@ -31,10 +34,10 @@ const Contact = () => {
       To: formState.your_email,
       From: "shahvidhi1995@gmail.com",
       Subject: "This is my Contact Form",
-      Body: `${formState.message}`,
+      Body: `${formState.Your_message}`,
     };
     if (window.Email) {
-      window.Email.send(config).then(() => alert(formState.your_email));
+      window.Email.send(config).then(() => alert("Email sent successfully"));
     }
   };
 
@@ -85,11 +88,11 @@ const Contact = () => {
             </div>
             <div>
               <textarea
-                name="message"
+                name="Your_message"
                 rows="5"
                 placeholder="Your Message"
                 className="msg"
-                value={formState.message || ""}
+                value={formState.Your_message || ""}
                 onChange={changeHandler}
               ></textarea>
             </div>
