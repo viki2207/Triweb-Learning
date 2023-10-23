@@ -28,7 +28,7 @@ const Works = () => {
               <h2>Book Store</h2>
               <p>Mern Project</p>
               <a
-                href="https://github.com/viki2207"
+                href="https://vidhi-book-shelf-front.onrender.com/"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -37,7 +37,7 @@ const Works = () => {
                 </button>
               </a>
               <a
-                href="https://github.com/viki2207"
+                href="https://github.com/viki2207/book-store"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -57,7 +57,7 @@ const Works = () => {
               <h2>TIC-TAC-TOE</h2>
               <p>React Project</p>
               <a
-                href="https://github.com/viki2207"
+                href="https://euphonious-gumdrop-26df91.netlify.app/"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -66,7 +66,7 @@ const Works = () => {
                 </button>
               </a>
               <a
-                href="https://github.com/viki2207"
+                href="https://github.com/viki2207/Triweb-Learning/tree/main/Projects/tic-tac-toe"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -90,12 +90,12 @@ const Works = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <button type="button" className="AnimatedBtn">
+                {/* <button type="button" className="AnimatedBtn">
                   Live
-                </button>
+                </button> */}
               </a>
               <a
-                href="https://github.com/viki2207"
+                href="https://github.com/viki2207/KHREACTF"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -119,12 +119,12 @@ const Works = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <button type="button" className="AnimatedBtn">
+                {/* <button type="button" className="AnimatedBtn">
                   Live
-                </button>
+                </button> */}
               </a>
               <a
-                href="https://github.com/viki2207"
+                href="https://github.com/viki2207/Triweb-Learning/tree/main/Projects/QuizApp"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -148,12 +148,12 @@ const Works = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <button type="button" className="AnimatedBtn">
+                {/* <button type="button" className="AnimatedBtn">
                   Live
-                </button>
+                </button> */}
               </a>
               <a
-                href="https://github.com/viki2207"
+                href="https://github.com/viki2207/Triweb-Learning/tree/main/Projects/BasicNodeJSProject"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -173,7 +173,7 @@ const Works = () => {
               <h2>User-Block</h2>
               <p>Vanila Js Project</p>
               <a
-                href="https://github.com/viki2207"
+                href="https://65338836e7d3247bfc546284--courageous-pastelito-d2f2c4.netlify.app/"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -182,7 +182,7 @@ const Works = () => {
                 </button>
               </a>
               <a
-                href="https://github.com/viki2207"
+                href="https://github.com/viki2207/Triweb-Learning/tree/main/Projects/BasicJSProject"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -194,7 +194,6 @@ const Works = () => {
           </div>
         </div>
       </div>
-      <button className="workBtn">See more</button>
     </section>
   );
 };

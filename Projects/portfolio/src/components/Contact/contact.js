@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import "./contact.css";
 import shahnet from "../../assets/shahnetlogo.jpeg";
 import triwebapi from "../../assets/triwebapilogo.jpeg";
@@ -14,30 +14,33 @@ import InstagramIcon from "../../assets/instagram.png";
 import emailjs from "@emailjs/browser";
 
 const Contact = () => {
+  const [formState, setFromState] = useState({});
+
   const form = useRef();
   //Send email function
-  const sendEmail = (e) => {
-    e.preventDefault();
 
-    emailjs
-      .sendForm(
-        "service_bkfmj0ux",
-        "template_gn816sc",
-        form.current,
-        "-RehOBGIRfFQRdY5Y4CDc"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          e.target.reset();
-          alert("Email sent successfully");
-        },
-        (error) => {
-          console.log(error.text);
-          alert(error);
-        }
-      );
+  const changeHandler = (event) => {
+    setFromState({ ...formState, [event.target.name]: event.target.value });
   };
+  const submitHandler = (event) => {
+    alert("I m in");
+    event.preventDefault();
+    const config = {
+      SecureToken: "2c8a1755-2392-4797-ab3c-9e9ba0a09ca9",
+      To: formState.your_email,
+      From: "shahvidhi1995@gmail.com",
+      Subject: "This is my Contact Form",
+      Body: `${formState.message}`,
+      // username: "shahvidhi1995@gmail.com",
+      // Password: "DC4A72D15D76DE38FED788DBFD9788DCDECE",
+      // Host: "smtp.elasticemail.com",
+      // Port: 2525,
+    };
+    if (window.Email) {
+      window.Email.send(config).then(() => alert(formState.your_email));
+    }
+  };
+
   return (
     <section id="contactPage">
       <div id="clients">
@@ -61,62 +64,75 @@ const Contact = () => {
         {/* onSubmit={sendEmail} */}
         {/* ref for email */}
         {/* contactForm */}
-        <from action="contactForm" ref={form} onSubmit={sendEmail}>
-          <div>
-            <input
-              type="text"
-              className="name"
-              placeholder="Your Name"
-              name="your_name"
-            ></input>
-          </div>
-          <div>
-            <input
-              type="text"
-              className="email"
-              placeholder="Your Email"
-              name="your_email"
-            ></input>
-          </div>
-          <div>
-            <textarea
-              name="message"
-              rows="5"
-              placeholder="Your Message"
-              className="msg"
-            ></textarea>
-          </div>
-          <div>
-            {/* <input type="submit" value="Send" className="submitBtn" /> */}
-            <button type="Submit" value="Send" className="submitBtn">
-              Submit
-            </button>
-          </div>
-          <div className="links">
-            <a
-              href="https://www.facebook.com/shahvidhi.jayeshbhai"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img src={FacebookIcon} alt="Facebook" className="link"></img>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/vidhi-shah-855556119"
-              target="_blank"
-              rel="noreferrer"
-            >
-              {/* <img src={TwitterIcon} alt="Twitter" className="link"></img> */}
-              <img src={LinkedinIcon} alt="Linkedin" className="link"></img>
-            </a>
-            <a
-              href="https://www.instagram.com/vdsh2207/?hl=en"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img src={InstagramIcon} alt="Instagram" className="link"></img>
-            </a>
-          </div>
-        </from>
+        <div>
+          <from action="contactForm" onSubmit={submitHandler}>
+            <div>
+              <input
+                type="text"
+                className="name"
+                placeholder="Your Name"
+                name="your_name"
+                value={formState.your_name || ""}
+                onChange={changeHandler}
+              ></input>
+            </div>
+            <div>
+              <input
+                type="text"
+                className="email"
+                placeholder="Your Email"
+                name="your_email"
+                value={formState.your_email || ""}
+                onChange={changeHandler}
+              ></input>
+            </div>
+            <div>
+              <textarea
+                name="message"
+                rows="5"
+                placeholder="Your Message"
+                className="msg"
+                value={formState.message || ""}
+                onChange={changeHandler}
+              ></textarea>
+            </div>
+            <div>
+              {/* <input type="submit" value="Send" className="submitBtn" /> */}
+              <button
+                type="submit"
+                value="Send"
+                className="submitBtn"
+                onClick={submitHandler}
+              >
+                Submit
+              </button>
+            </div>
+            <div className="links">
+              <a
+                href="https://www.facebook.com/shahvidhi.jayeshbhai"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src={FacebookIcon} alt="Facebook" className="link"></img>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/vidhi-shah-855556119"
+                target="_blank"
+                rel="noreferrer"
+              >
+                {/* <img src={TwitterIcon} alt="Twitter" className="link"></img> */}
+                <img src={LinkedinIcon} alt="Linkedin" className="link"></img>
+              </a>
+              <a
+                href="https://www.instagram.com/vdsh2207/?hl=en"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src={InstagramIcon} alt="Instagram" className="link"></img>
+              </a>
+            </div>
+          </from>
+        </div>
       </div>
     </section>
   );
