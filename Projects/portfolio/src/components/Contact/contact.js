@@ -24,6 +24,7 @@ const Contact = () => {
   };
   const submitHandler = (event) => {
     alert("I m in");
+    //https://app.elasticemail.com/ and using https://smtpjs.com/
     event.preventDefault();
     const config = {
       SecureToken: "2c8a1755-2392-4797-ab3c-9e9ba0a09ca9",
@@ -31,10 +32,6 @@ const Contact = () => {
       From: "shahvidhi1995@gmail.com",
       Subject: "This is my Contact Form",
       Body: `${formState.message}`,
-      // username: "shahvidhi1995@gmail.com",
-      // Password: "DC4A72D15D76DE38FED788DBFD9788DCDECE",
-      // Host: "smtp.elasticemail.com",
-      // Port: 2525,
     };
     if (window.Email) {
       window.Email.send(config).then(() => alert(formState.your_email));
