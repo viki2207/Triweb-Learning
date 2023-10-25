@@ -1,6 +1,6 @@
 <h1 align=center style="color:blue">Triweb Learning</h1>
 <p align=center>
-<img src='./Projects/portfolio/public/TriwebAPI.jpg' width='350px'>
+<img src='https://media.licdn.com/dms/image/D4D16AQGbf5g_8XNZCQ/profile-displaybackgroundimage-shrink_200_800/0/1693924431786?e=2147483647&v=beta&t=ByWCen4aZ6-PFVaUVwjl4ZoHc6a0CLd8YAJIjXA2uP0' width='350px'>
 </p>
                                                     
 This is a MERN stack internship.In this internship I get familiar with different-different technoligies related to Web Development like HTML, CSS, Javascript,NodeJS and so on.
@@ -47,7 +47,7 @@ Navigate to README of particular project ->
 
 * **[BasicJsProject](./Projects/BasicJSProject/README.md) :** A basic project using vanilla Javascript. 
   
-* * **[BasicNodeJsProject](./Projects/BasicNodeJSProject/README.md) :** A basic Nodejs project using Node.
+*  **[BasicNodeJsProject](./Projects/BasicNodeJSProject/README.md) :** A basic Nodejs project using Node.
 
 * **[Portfolio](./Projects/portfolio/README.md) :** A portfolio website to introduce myself and my skills
 
@@ -70,7 +70,7 @@ Navigate to README of particular project ->
 [● React](./React/README.md) : Very important library of JS for building UI. Will get familiar with react and its concepts like props, hooks, state and so on.
 
 # References
-HTML - https://developer.mozilla.org/en-US/docs/Web/HTML
+HTML5 - https://developer.mozilla.org/en-US/docs/Glossary/HTML5
 
 CSS- https://www.w3schools.com/css/
 
