@@ -6,7 +6,7 @@ _Explore CSS basics and learn deep concepts of CSS. Learn how to apply different
 
 Screenshot of design Registration form :-
 
-<img src='https://github.com/viki2207/Triweb-Learning/tree/main/CSS/Form/Formoverview.png' width='400px'>
+<img src='https://github.com/viki2207/Triweb-Learning/blob/main/CSS/Form/Formoverview.png' width='400px'>
 
 Navigate to folder form direct through this link 👉 [Form](./Form/Formoverview.png)
 
@@ -14,6 +14,6 @@ Navigate to folder form direct through this link 👉 [Form](./Form/Formoverview
 
 Screenshot of design Table :-
 
-<img src='https://github.com/viki2207/Triweb-Learning/tree/main/CSS/TimeTable/Timetableoverview.png' width='400px'>
+<img src='https://github.com/viki2207/Triweb-Learning/blob/main/CSS/TimeTable/Timetableoverview.png' width='400px'>
 
 Navigate to folder of table through this link 👉 [Routine Table](./TimeTable/Timetableoverview.png)
