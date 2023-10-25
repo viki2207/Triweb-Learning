@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+# About Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Portfolio website to introduce myself and my skils. Get to know about my learning, education, skills, projects that I have build.
 
-## Available Scripts
+# Tech used
 
-In the project directory, you can run:
+![Static Badge](https://img.shields.io/badge/html-white?logo=html5)
+![Static Badge](https://img.shields.io/badge/css3-green?logo=css3)
+![Static Badge](https://img.shields.io/badge/Javascript-%23881337?logo=javascript)
+![Static Badge](https://img.shields.io/badge/React-%23164E63?logo=react)
+![Static Badge](https://img.shields.io/badge/tailwind%20CSS-%23881337?logo=tailwindcss)
+![Static Badge](https://img.shields.io/badge/Bootstrap-%23701A75?logo=tailwindcss)
 
-### `npm start`
+# Pre-requisite
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+To follow this project, following are the pre-requisite
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+NodeJS
 
-### `npm test`
+VS code
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+git
 
-### `npm run build`
+# Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The following commands install and run the development version
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+git clone 'link-of-my-repo '
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+cd Projects
 
-### `npm run eject`
+cd Portfolio
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+npm install
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+npm start
+# About Project
+Portfolio website to introduce myself and my skils. Get to know about my learning, education, skills, projects that I have build.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Tech used
+![Static Badge](https://img.shields.io/badge/html-white?logo=html5)
+![Static Badge](https://img.shields.io/badge/css3-green?logo=css3)
+![Static Badge](https://img.shields.io/badge/Javascript-%23881337?logo=javascript)
+![Static Badge](https://img.shields.io/badge/React-%23164E63?logo=react)
+![Static Badge](https://img.shields.io/badge/tailwind%20CSS-%23881337?logo=tailwindcss)
+![Static Badge](https://img.shields.io/badge/Bootstrap-%23701A75?logo=tailwindcss)
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Pre-requisite
 
-### Code Splitting
+To follow this project, following are the pre-requisite
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+NodeJS
 
-### Analyzing the Bundle Size
+VS code
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+git
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+# Installation
+The following commands install and run the development version
 
-### Advanced Configuration
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+git clone 'link-of-my-repo '
 
-### Deployment
+cd Projects
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+cd Portfolio
 
-### `npm run build` fails to minify
+npm install
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+npm start
+
+```
+
+```
