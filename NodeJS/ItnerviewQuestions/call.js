@@ -1,3 +1,6 @@
+//call function is using for the call function
+//call function depend on this
+// this function always returns the particular function reference
 function Product(productName, Price) {
   this.productName = productName;
   this.product = Price;
