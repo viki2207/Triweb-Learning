@@ -1,3 +1,6 @@
+//set immideate is not immideate as at name
+//call back place in the the check queue of the next cycle of the event loop
+//check queue , occurs later in the timmer queue
 let a = 1;
 let b = 2;
 function addTwoNumbers(a, b) {
