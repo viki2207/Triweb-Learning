@@ -1,5 +1,5 @@
 const marksofStudent = [40, 60, 70, 78, 17, 34, 34, 34, 34];
-//object destructuring
+//object destructuring is used for destructure data from data structure that is come from one object and divided into different parts in  a variable from array and from object
 //remove data put in variables called distructuring
 // subject1marks = marksofStudent[0];
 // subject2marks = marksofStudent[1];
