@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "./Button";
 import "./works.css";
-import Portfolio1 from "../../assets/BookStore.png";
+import Portfolio1 from "../../assets/BookStore.jpeg";
 import Portfolio2 from "../../assets/Tictactoe.png";
 import Portfolio3 from "../../assets/Devconnector.png";
 import Portfolio4 from "../../assets/Quizapp.png";

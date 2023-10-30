@@ -23,9 +23,8 @@ const Intro = () => {
           I'm <span className="introName">{text}</span>
         </span>
         <p className="intropara">
-          I am a skilled and passionate Full Stack developer with experiencing
-          in creating{<br />} visually appealing and user - friendly
-          applications
+          I am a skilled and passionate Full Stack developer with experienced in
+          creating{<br />} visually appealing and user - friendly applications
         </p>
         <span>
           <a

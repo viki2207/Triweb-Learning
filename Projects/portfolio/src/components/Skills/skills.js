@@ -10,8 +10,9 @@ const skills = () => {
       <span className="skillTitle">My Skills</span>
       <span className="skillDesc">
         Self motivated Full stack Developer familiar with 5+ years of experience
-        as a developer. React, Express,node, Mongodb, MYSQL, SQL Server,js, c#,
-        MVC, RestApi,AWS
+        as a developer.
+        <br /> React, Express, Node.JS, Mongodb, MYSQL, SQL Server, js, c#, MVC,
+        RestApi, AWS
       </span>
       <div className="skillBars">
         <div className="skillBar">
