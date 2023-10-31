@@ -1,5 +1,8 @@
 //in call pass arguments
 //in apply() pass array
+//apply make whole array
+//apply execute directly
+
 function product(pname, price) {
   this.pname = pname;
   this.price = price;
