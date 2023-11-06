@@ -1,0 +1,7 @@
+const obj = { a: 1, b: 2, c: 3 };
+const newObj = { ...obj };
+console.log("Before - obj", obj);
+console.log("Before - obj", newObj);
+obj["a"] = 8;
+console.log("After - obj", obj);
+console.log("Before - obj", newObj);
