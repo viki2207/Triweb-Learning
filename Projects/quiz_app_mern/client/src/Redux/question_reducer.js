@@ -18,7 +18,7 @@ export const questionReducer = createSlice({
     //update the value of the store
     startExamination: (state, action) => {
       return {
-        state,
+        ...state,
         queue: action.payload, //payload means user input
       };
     },
