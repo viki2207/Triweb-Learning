@@ -14,16 +14,19 @@ export default function Quiz() {
   const { queue, trace } = useSelector((state) => state.questions);
   const dispatch = useDispatch();
   useEffect(() => {
-    // console.log(result);
-    console.log(trace);
-    console.log("here");
+    console.log(result);
+    // console.log(trace);
+    // console.log("here");
   });
   /** next button event handler */
   function onNext() {
     console.log("On next click");
     if (trace < queue.length) {
       dispatch(moveNextAction());
-      dispatch(PushAnswer(check));
+      if (result.length <= trace) {
+        /** Insert a new array */
+        dispatch(PushAnswer(check));
+      }
     }
     //update the trace value by one using move next action
   }

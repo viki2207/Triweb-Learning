@@ -1,29 +1,34 @@
 import React, { useEffect, useState } from "react";
 import data from "../Database/data";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useFetchQuestion } from "../hooks/Fetchquestion";
+import { updateResultAction } from "../Redux/result_reducer";
+import { updateResult } from "../hooks/setResult";
+
 export default function Questions({ onChecked }) {
   const [checked, setChecked] = useState(undefined);
+  const { trace } = useSelector((state) => state.questions);
   const [{ isLoading, apiData, serverError }] = useFetchQuestion();
   const question = data[0];
   const questions = useSelector(
     (state) => state.questions.queue[state.questions.trace]
   );
+  const dispatch = useDispatch();
   //const trace = useSelector((state) => state.questions.trace);
 
   useEffect(() => {
-    // console.log(questions);
-  });
+    dispatch(updateResult({ trace, checked }));
+  }, [checked]);
 
-  useEffect(() => {
-    // console.log(isLoading );
-    // console.log(apiData);
-    //console.log(serverError );
-  });
+  // useEffect(() => {
+  //   // console.log(isLoading );
+  //   // console.log(apiData);
+  //   //console.log(serverError );
+  // });
   function onSelect(i) {
-    setChecked(true);
     console.log(i);
     onChecked(i);
+    setChecked(i);
   }
   if (isLoading) return <h3 className="text-light">isLoading</h3>;
   if (serverError)
