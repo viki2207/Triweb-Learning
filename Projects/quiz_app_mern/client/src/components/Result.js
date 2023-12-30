@@ -10,8 +10,8 @@ export default function Result() {
   const dispatch = useDispatch();
 
   function onRestart() {
-    dispatch(resetAllAction);
-    dispatch(resetResultAction);
+    dispatch(resetAllAction());
+    dispatch(resetResultAction());
   }
   return (
     <div className="container">

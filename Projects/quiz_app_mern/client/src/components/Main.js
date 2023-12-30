@@ -23,7 +23,7 @@ export const Main = () => {
         ></input>
       </form>
       <div className="start">
-        <Link className="btn" to={"quiz"}>
+        <Link className="btn" to={"/quiz"}>
           Start quiz
         </Link>
       </div>
