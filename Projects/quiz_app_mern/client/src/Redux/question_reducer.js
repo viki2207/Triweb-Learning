@@ -22,7 +22,34 @@ export const questionReducer = createSlice({
         queue: action.payload, //payload means user input
       };
     },
+    moveNextAction: (state, action) => {
+      return {
+        //get previous state
+        ...state,
+        trace: state.trace + 1,
+      };
+    },
+    movePrevAction: (state) => {
+      return {
+        ...state,
+        trace: state.trace - 1,
+      };
+    },
+    resetAllAction: () => {
+      return {
+        queue: [],
+        //store all answer
+        answers: [],
+        //store crack question  index
+        trace: 0,
+      };
+    },
   },
 });
-export const { startExamination } = questionReducer.actions;
+export const {
+  startExamination,
+  moveNextAction,
+  movePrevAction,
+  resetAllAction,
+} = questionReducer.actions;
 export default questionReducer.reducer;

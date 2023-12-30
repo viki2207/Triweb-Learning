@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import data from "../Database/data";
 import { useSelector } from "react-redux";
 import { useFetchQuestion } from "../hooks/Fetchquestion";
-export default function Questions() {
+export default function Questions({ onChecked }) {
   const [checked, setChecked] = useState(undefined);
   const [{ isLoading, apiData, serverError }] = useFetchQuestion();
   const question = data[0];
@@ -12,7 +12,7 @@ export default function Questions() {
   //const trace = useSelector((state) => state.questions.trace);
 
   useEffect(() => {
-    console.log(questions);
+    // console.log(questions);
   });
 
   useEffect(() => {
@@ -20,9 +20,10 @@ export default function Questions() {
     // console.log(apiData);
     //console.log(serverError );
   });
-  function onSelect() {
+  function onSelect(i) {
     setChecked(true);
-    console.log("radio button change");
+    console.log(i);
+    onChecked(i);
   }
   if (isLoading) return <h3 className="text-light">isLoading</h3>;
   if (serverError)
@@ -38,7 +39,7 @@ export default function Questions() {
               value={true}
               name="options"
               id={`q${i}-option`}
-              onChange={onSelect}
+              onChange={() => onSelect(i)}
             />
             <label htmlFor={`q${i}-option`} className="text-primary">
               {q}
