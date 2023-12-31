@@ -30,6 +30,7 @@ export default function Questions({ onChecked }) {
     console.log(i);
     onChecked(i);
     setChecked(i);
+    dispatch(updateResult({ trace, checked }));
   }
   if (isLoading) return <h3 className="text-light">isLoading</h3>;
   if (serverError)
