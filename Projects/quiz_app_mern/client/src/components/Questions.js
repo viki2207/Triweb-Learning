@@ -8,6 +8,7 @@ import { updateResult } from "../hooks/setResult";
 export default function Questions({ onChecked }) {
   const [checked, setChecked] = useState(undefined);
   const { trace } = useSelector((state) => state.questions);
+  const result = useSelector((state) => state.result.result);
   const [{ isLoading, apiData, serverError }] = useFetchQuestion();
   const question = data[0];
   const questions = useSelector(
@@ -50,7 +51,9 @@ export default function Questions({ onChecked }) {
               {q}
             </label>
 
-            <div className="check"></div>
+            <div
+              className={`check ${result[trace] == i ? "checked" : ""}`}
+            ></div>
           </li>
         ))}
       </ul>
