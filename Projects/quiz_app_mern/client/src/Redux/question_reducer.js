@@ -16,10 +16,12 @@ export const questionReducer = createSlice({
   //u create reducer automatically create the action
   reducers: {
     //update the value of the store
-    startExamination: (state, action) => {
+    startExamAction: (state, action) => {
+      let { question, answers } = action.payload;
       return {
         ...state,
-        queue: action.payload, //payload means user input
+        queue: question,
+        answers, //payload means user input
       };
     },
     moveNextAction: (state, action) => {
@@ -47,7 +49,7 @@ export const questionReducer = createSlice({
   },
 });
 export const {
-  startExamination,
+  startExamAction,
   moveNextAction,
   movePrevAction,
   resetAllAction,

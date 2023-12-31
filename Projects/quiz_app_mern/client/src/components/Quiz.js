@@ -13,11 +13,11 @@ export default function Quiz() {
   //const trace = useSelector((state) => state.questions.trace);
   const { queue, trace } = useSelector((state) => state.questions);
   const dispatch = useDispatch();
-  useEffect(() => {
-    console.log(result);
-    // console.log(trace);
-    // console.log("here");
-  });
+  // useEffect(() => {
+  //   console.log(result);
+  //   // console.log(trace);
+  //   // console.log("here");
+  // });
   /** next button event handler */
   function onNext() {
     console.log("On next click");
@@ -28,6 +28,8 @@ export default function Quiz() {
         dispatch(PushAnswer(check));
       }
     }
+    /** reset the value of the check variable */
+    setChecked(undefined);
     //update the trace value by one using move next action
   }
   /** prev button event handler */
