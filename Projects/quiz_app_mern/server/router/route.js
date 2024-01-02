@@ -1,0 +1,13 @@
+import { Router } from "express";
+const router = Router();
+/**import controller */
+import * as controller from "../controllers/controller.js";
+/** question route for question api */
+
+router
+  .route("/questions")
+  .get(controller.getQuestions)
+  .post(controller.insertQuestions)
+  .delete(controller.dropQuestions);
+
+export default router;

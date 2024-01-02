@@ -4,6 +4,7 @@ import morgan from "morgan";
 //cors using for the data sharing
 import cors from "cors";
 import { config } from "dotenv";
+import router from "./router/route.js";
 const app = express();
 /**app middleware */
 app.use(morgan("tiny"));
@@ -12,6 +13,8 @@ app.use(express.json());
 config();
 /**Application port */
 const port = process.env.PORT || 8080;
+/** routes */
+app.use("/api", router);
 /** routes */
 app.get("/", (req, res) => {
   try {
