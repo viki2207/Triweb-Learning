@@ -10,4 +10,10 @@ router
   .post(controller.insertQuestions)
   .delete(controller.dropQuestions);
 
+router
+  .route("/result")
+  .get(controller.getResult)
+  .post(controller.storeResult)
+  .delete(controller.dropResult);
+
 export default router;
