@@ -1,5 +1,5 @@
 import Questions from "../models/questionSchema.js";
-import result from "../models/resultSchema.js";
+import Results from "../models/resultSchema.js";
 import questions, { answers } from "../database/data.js";
 
 /**get all question */
@@ -9,6 +9,7 @@ export async function getQuestions(req, res) {
     const q = await Questions.find();
     res.json(q);
   } catch (error) {
+    console.error(error);
     res.json({ error });
   }
 }
@@ -30,11 +31,28 @@ export async function dropQuestions(req, res) {
   } catch (error) {}
 }
 export async function getResult(req, res) {
-  res.json("Result api get request");
+  try {
+    const r = await Results.find();
+    res.json(r);
+  } catch (error) {}
 }
 export async function storeResult(req, res) {
-  res.json("Result api post request");
+  try {
+    const { username, result, Attempts, points, achived } = req.body;
+    if (!username && !result) throw Error("data not provided");
+    Results.create(
+      { username, result, Attempts, points, achived },
+      function (err, data) {
+        res.json({ msg: "Result saved successfully" });
+      }
+    );
+  } catch (error) {}
 }
 export async function dropResult(req, res) {
-  res.json("Result api delete request");
+  try {
+    await Results.deleteMany();
+    res.json({ msg: "Data deleted successfully deleted successfully" });
+  } catch (error) {
+    res.json({ error });
+  }
 }
