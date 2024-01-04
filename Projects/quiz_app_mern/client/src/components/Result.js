@@ -5,6 +5,7 @@ import { Resulttable } from "./Resulttable";
 import { resetAllAction } from "../Redux/question_reducer";
 import { resetResultAction } from "../Redux/result_reducer";
 import { useDispatch, useSelector } from "react-redux";
+import { usePublishResult } from "../hooks/setResult";
 import {
   attemps_Number,
   earnPoints_Number,
@@ -25,6 +26,22 @@ export default function Result() {
   const attempts = attemps_Number(result);
   const earnPoints = earnPoints_Number(result, answers, 10);
   const flag = flagResult(totalPoints, earnPoints);
+  usePublishResult({
+    result,
+    username: userId,
+    attempts,
+    points: earnPoints,
+    achived: flag ? "passed" : "Failed",
+  });
+
+  console.log({
+    result,
+    username: userId,
+    attempts,
+    points: earnPoints,
+    achived: flag ? "passed" : "Failed",
+  });
+
   function onRestart() {
     dispatch(resetAllAction());
     dispatch(resetResultAction());
@@ -35,7 +52,7 @@ export default function Result() {
       <div className="result flex-center">
         <div className="flex">
           <span>Username</span>
-          <span className="bold">Daily Tuition</span>
+          <span className="bold">{userId}</span>
         </div>
         <div className="flex">
           <span>Total Quiz Points:</span>

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import data, { answers } from "../Database/data";
 import { useDispatch } from "react-redux";
 import * as Action from "../Redux/question_reducer";
+import { getServerData } from "../helper/helper";
 
 /** This is a fetch question hook to fetch api data and set value to the store */
 export const useFetchQuestion = () => {
@@ -17,10 +18,15 @@ export const useFetchQuestion = () => {
     (async () => {
       try {
         let question = await data;
-        if (question.length > 0) {
+        const [{ questions, answers }] = await getServerData(
+          `${process.env.REACT_APP_SERVER_HOSTNAME}/api/questions`,
+          (data) => data
+        );
+        console.log({ questions, answers });
+        if (questions.length > 0) {
           setGetData((prev) => ({ ...prev, isLoading: false }));
           setGetData((prev) => ({ ...prev, apiData: { question, answers } }));
-          dispatch(Action.startExamAction({ question, answers }));
+          dispatch(Action.startExamAction({ question: questions, answers }));
         } else {
           throw new Error("No question Available");
         }
