@@ -17,6 +17,7 @@ app.use(express.json());
 config();
 /**Application port */
 const port = process.env.PORT || 8080;
+console.log(port);
 
 /** routes */
 app.use("/api", router);
@@ -24,6 +25,7 @@ app.use("/api", router);
 app.get("/", (req, res) => {
   try {
     res.json("Get Request");
+    console.log("re");
   } catch (error) {
     res.json(error.message);
   }
@@ -33,7 +35,7 @@ connect()
   .then(() => {
     try {
       app.listen(port, () => {
-        console.log(`Server connected to http://localhost:${port}`);
+        console.log(`Server connected to https://localhost:${port}`);
       });
     } catch (error) {
       console.log("Cannont connect to the server ");
