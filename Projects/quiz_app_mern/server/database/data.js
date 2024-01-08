@@ -4,6 +4,7 @@ export default [
     question: "Javascript is an _______ language",
     options: ["Object-Oriented", "Object-Based", "Procedural"],
   },
+  ,
   {
     id: 2,
     question:

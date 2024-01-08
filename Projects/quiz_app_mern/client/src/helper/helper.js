@@ -19,13 +19,18 @@ export function flagResult(totalPoints, earnPoints, result) {
 /** auth function */
 export function CheckUserExist({ children }) {
   const auth = useSelector((state) => state.result.userId);
+
   return auth ? children : <Navigate to={"/"} replace={true}></Navigate>;
 }
 
 /** get server data  using this function get all the backend data*/
 export async function getServerData(url, callback) {
   const data = await (await axios.get(url))?.data;
-  return callback ? callback(data) : data;
+  if (data !== undefined) {
+    return callback ? callback(data) : data;
+  } else {
+    data = "No Data Available";
+  }
 }
 /** post server data*/
 export async function postServerData(url, result, callback) {

@@ -17,12 +17,13 @@ export const useFetchQuestion = () => {
     setGetData((prev) => ({ ...prev, isLoading: true }));
     (async () => {
       try {
+        // `${process.env.REACT_APP_SERVER_HOSTNAME}/api/questions`
         let question = await data;
         const [{ questions, answers }] = await getServerData(
-          `${process.env.REACT_APP_SERVER_HOSTNAME}/api/questions`,
+          "http://localhost:5005/api/questions",
           (data) => data
         );
-        console.log({ questions, answers });
+
         if (questions.length > 0) {
           setGetData((prev) => ({ ...prev, isLoading: false }));
           setGetData((prev) => ({ ...prev, apiData: { question, answers } }));

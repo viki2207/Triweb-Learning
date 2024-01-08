@@ -1,7 +1,9 @@
 import Questions from "../models/questionSchema.js";
 import Results from "../models/resultSchema.js";
 import questions, { answers } from "../database/data.js";
-
+import mongoose from "mongoose";
+//const QuestionSchemaname = Questions.modelName;
+//const Questions1 = mongoose.model("Questions1", QuestionSchemaname);
 /**get all question */
 export async function getQuestions(req, res) {
   /**method in a find all in collection and inside and return all */
@@ -15,13 +17,16 @@ export async function getQuestions(req, res) {
 }
 /**Insert all questions */
 export async function insertQuestions(req, res) {
-  try {
-    Questions.insertMany({ questions, answers }, function (err, data) {
-      res.json({ msg: "Data saved successfully..." });
+  //console.log(QuestionSchemaname);
+  // console.log("here");
+  await Questions.insertMany({ questions: questions, answers: answers })
+    .then(function (err, data) {
+      res.json({ msg: "Data Saved Successfully...!" });
+    })
+    .catch(function (error) {
+      console.log(error);
+      res.json({ error });
     });
-  } catch (error) {
-    res.json({ error });
-  }
 }
 
 export async function dropQuestions(req, res) {
@@ -32,21 +37,27 @@ export async function dropQuestions(req, res) {
 }
 export async function getResult(req, res) {
   try {
+    const { username } = req.body;
+    console.log(username);
     const r = await Results.find();
     res.json(r);
   } catch (error) {}
 }
+
 export async function storeResult(req, res) {
   try {
-    const { username, result, Attempts, points, achived } = req.body;
-    if (!username && !result) throw Error("data not provided");
-    Results.create(
-      { username, result, Attempts, points, achived },
-      function (err, data) {
+    const { username, result, attempts, points, achived } = req.body;
+    if (!username && !result) throw new Error("data not provided");
+    Results.create({ username, result, attempts, points, achived })
+      .then(function (err, data) {
         res.json({ msg: "Result saved successfully" });
-      }
-    );
-  } catch (error) {}
+      })
+      .catch(function (error) {
+        res.json({ error: error.message });
+      });
+  } catch (err) {
+    console.log(err);
+  }
 }
 export async function dropResult(req, res) {
   try {
