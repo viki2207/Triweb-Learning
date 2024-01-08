@@ -35,12 +35,13 @@ connect()
   .then(() => {
     try {
       app.listen(port, () => {
-        console.log(`Server connected to https://localhost:${port}`);
+        console.log(`Server connected to https://localhost:5005`);
       });
     } catch (error) {
       console.log("Cannont connect to the server ");
     }
   })
   .catch((error) => {
+    console.log(error.message);
     console.log("Invalid Database Connection");
   });
