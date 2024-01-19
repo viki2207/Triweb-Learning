@@ -36,6 +36,6 @@ app.get("/url/:shortId", async (req, res) => {
       },
     }
   );
-  //   res.redirect(entry.redirectURL);
+  res.redirect(entry.redirectURL);
 });
 app.listen(PORT, () => console.log(`server started at PORT: ${PORT}`));
