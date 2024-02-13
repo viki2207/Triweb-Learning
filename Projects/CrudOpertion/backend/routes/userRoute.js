@@ -11,7 +11,7 @@ router.post("/", async (req, res, next) => {
     res.status(201).json(userAdded);
   } catch (error) {
     console.log("error: ", error);
-    res.send(400).json({ error: error.message });
+    res.status(400).json({ error: error.message });
   }
 
   //in here first name is coming from frontend and second name coming from backend
@@ -25,7 +25,6 @@ router.get("/", async (req, res, next) => {
     console.log("error: ", error);
     res.send(400).json({ error: error.message });
   }
-  res.send("Api running");
 });
 
 //get single user
