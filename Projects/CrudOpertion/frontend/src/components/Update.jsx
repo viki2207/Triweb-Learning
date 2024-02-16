@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const Update = () => {
   const [name, setName] = useState("");
@@ -7,6 +7,8 @@ const Update = () => {
   const [age, setAge] = useState(0);
   const [error, setError] = useState("");
   const { id } = useParams();
+  const Navigate = useNavigate();
+  //get single user data
   const getSingleUser = async () => {
     //using in url
 
@@ -24,6 +26,30 @@ const Update = () => {
       setAge(result.age);
     }
   };
+  //send updated data to backend
+  const handleUpdate = async (e) => {
+    //bydefault all form functionlity close
+    e.preventDefault();
+    //data save in ina  seperate variable
+    const updateUser = { name, email, age };
+    //data save in backend
+    const response = await fetch(`http://localhost:4000/api/user/${id}`, {
+      method: "PATCH",
+      body: JSON.stringify(updateUser),
+      headers: {
+        "content-type": "application/json",
+      },
+    });
+    const result = await response.json();
+    if (!response.ok) {
+      console.log(result.error);
+      setError(result.error);
+    }
+    if (response.ok) {
+      setError("");
+      Navigate("/all");
+    }
+  };
   useEffect(() => {
     getSingleUser();
   }, []);
@@ -33,7 +59,7 @@ const Update = () => {
       {error && <div class="alert alert-danger">{error}</div>}
       <h2 className="text-center"> Edit the Data</h2>
 
-      <form>
+      <form onSubmit={handleUpdate}>
         <div className="mb-3">
           <label className="form-label">Name</label>
           <input
