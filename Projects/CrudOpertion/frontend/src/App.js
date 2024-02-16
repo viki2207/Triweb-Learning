@@ -10,9 +10,9 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route exact path="/" element={<Create />} />
-          <Route exact path="/all" element={<Read />} />
-          <Route exact path="/update" element={<Update />} />
+          <Route path="/" element={<Create />} />
+          <Route path="/all" element={<Read />} />
+          <Route path="/:id" element={<Update />} />
         </Routes>
       </BrowserRouter>
     </div>
