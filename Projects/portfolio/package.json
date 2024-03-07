@@ -11,6 +11,7 @@
     "firebase-tools": "^12.7.0",
     "functions": "^1.0.9",
     "init": "^0.1.2",
+    "is-docker": "^3.0.0",
     "login": "^0.8.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

@@ -4,7 +4,7 @@ import bg from "../../assets/Vidhi1.png";
 import { Link } from "react-scroll";
 import btnImg from "../../assets/GitHub.png";
 import btnImg1 from "../../assets/Resume.png";
-import resume from "../../assets/Resume.pdf";
+import resume from "../../assets/VidhiShahResume.pdf";
 
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 const Intro = () => {

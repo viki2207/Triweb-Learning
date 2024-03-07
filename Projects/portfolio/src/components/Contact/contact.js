@@ -3,7 +3,7 @@ import "./contact.css";
 import shahnet from "../../assets/shahnetlogo.jpeg";
 import triwebapi from "../../assets/triwebapilogo.jpeg";
 import knowledgehut from "../../assets/knowledgehutlogo.png";
-import medtechit from "../../assets/medtechitlogo.png";
+import medtechit from "../../assets/webleonz.jpg";
 import Facebook from "../../assets/facebook.png";
 import FacebookIcon from "../../assets/facebook-icon.png";
 import TwitterIcon from "../../assets/twitter.png";
