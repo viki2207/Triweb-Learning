@@ -115,6 +115,15 @@ const Works = () => {
               <h2>Quiz Application</h2>
               <p>Node JS Project</p>
               <a
+                href="https://quizappmanager.netlify.app/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <button type="button" className="AnimatedBtn">
+                  Live
+                </button>
+              </a>
+              <a
                 href="https://github.com/viki2207"
                 target="_blank"
                 rel="noreferrer"
